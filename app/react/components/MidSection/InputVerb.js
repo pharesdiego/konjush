@@ -2,8 +2,8 @@ const React = require('react'),
 			checkVerb = require('./../Resources/checkVerb'),
 			random = require('./../Resources/random'),
 			verbs = require('./../Resources/verbs'),
-			faces = require('./../Resources/asciiFaces')
-
+			faces = require('./../Resources/asciiFaces'),
+			formatValue = require('./../Resources/formatValue');
 
 const InputVerb = (props) => {
 
@@ -11,13 +11,13 @@ const InputVerb = (props) => {
 
 	var changeStateValue = (event) => {
 
-		props.verbChange(event.target.value.toLowerCase());
+		props.verbChange(formatValue(event.target.value));
 
-		if(checkVerb(event.target.value.toLowerCase())){
+		if(checkVerb(formatValue(event.target.value))){
 
-			props.addVerb(checkVerb(event.target.value.toLowerCase()));
+			props.addVerb(formatValue(event.target.value));
 
-			props.verbData(checkVerb(event.target.value.toLowerCase()));
+			props.verbData(formatValue(event.target.value));
 
 			event.target.value = '';
 

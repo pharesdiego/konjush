@@ -10,7 +10,7 @@
   "author": "Diego Phares",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "turkish-conjugator": "^0.0.13"
+    "turkish-conjugator": "^1.0.19"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,5 +34,6 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.9.1",
     "webpack-dev-server": "^1.16.5"
-  }
+  },
+  "private": true
 }
