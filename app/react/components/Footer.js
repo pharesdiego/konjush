@@ -8,7 +8,21 @@ class Footer extends React.Component {
 
 	render(){
 
-		var items = ['Who did this?', 'Fork on GitHub', 'NPM'];
+		var items = 
+		[
+			{
+				text:'Who did this?',
+				url: "https://github.com/pharesdiego"
+			},
+			{
+				text: 'Fork on GitHub',
+				url: "https://github.com/pharesdiego/turkish-conjugator"
+			},
+			{
+				text: 'NPM',
+				url: "https://www.npmjs.com/package/turkish-conjugator"
+			}
+		];
 
 		return(
 

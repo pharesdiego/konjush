@@ -1,8 +1,13 @@
 const React = require('react'),
-			checkVerb = require('./../Resources/checkVerb');
+			checkVerb = require('./../Resources/checkVerb'),
+			random = require('./../Resources/random'),
+			verbs = require('./../Resources/verbs'),
+			faces = require('./../Resources/asciiFaces')
+
 
 const InputVerb = (props) => {
 
+	var placeHolder = (props.boolPlaceholder) ? `Write a verb like: ${verbs[random(verbs.length)]} :)` : `Another verb? ${faces[random(faces.length)]}`;
 
 	var changeStateValue = (event) => {
 
@@ -24,7 +29,7 @@ const InputVerb = (props) => {
 	}
 
 		return(
-			<input onChange={changeStateValue} type='text' className='input-verb' placeholder='Write a verb :)' autoFocus={props.focus} />
+			<input onChange={changeStateValue} type='text' className='input-verb' placeholder={placeHolder} autoFocus={props.focus} />
 		);
 
 }

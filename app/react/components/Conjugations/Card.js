@@ -58,10 +58,10 @@ class Card extends React.Component {
 					<div className={"indicator-toggle mb-2 " + (this.state.verbForm ? '' : 'indicator-toggle-right ') + (this.state.expanded ? '' : 'waitIt')}></div>
 
 					<div className={"row no-gutters " + (this.state.expanded ? '' : 'no-expanded')}>
-						<div className="col-2">
+						<div className="col-2 col-lg-3">
 							{pronoms.map(item => <p className="color-gray mb-1" key={item}>{item}</p>)}
 						</div>
-						<div className="col-10">
+						<div className="col-10 col-lg-9">
 							{this.state.verbForm == true ? this.props.Positives.map(item => <p className='p-list-conjugation mb-1' key={item}>{item}</p>) : this.props.Negatives.map(item => <p className='p-list-conjugation mb-1' key={item}>{item}</p>)}
 						</div>
 					</div>
