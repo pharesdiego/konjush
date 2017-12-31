@@ -51,18 +51,18 @@ class Card extends React.Component {
 					</div>
 
 					<div className={"box-state-buttons row no-gutters " + (this.state.expanded ? '' : 'no-expanded')}>
-						<div className="col-6 text-center py-1" onClick={this.changeToPositive}>Positive</div>
-						<div className="col-6 text-center py-1" onClick={this.changeToNegative}>Negative</div>
+						<div className="col-6 text-center py-1 size-20" onClick={this.changeToPositive}>Positive</div>
+						<div className="col-6 text-center py-1 size-20" onClick={this.changeToNegative}>Negative</div>
 					</div>
 
 					<div className={"indicator-toggle mb-2 " + (this.state.verbForm ? '' : 'indicator-toggle-right ') + (this.state.expanded ? '' : 'waitIt')}></div>
 
 					<div className={"row no-gutters " + (this.state.expanded ? '' : 'no-expanded')}>
 						<div className="col-2 col-lg-3">
-							{pronoms.map(item => <p className="color-gray mb-1" key={item}>{item}</p>)}
+							{pronoms.map(item => <p className="color-gray mb-1 size-18" key={item}>{item}</p>)}
 						</div>
 						<div className="col-10 col-lg-9">
-							{this.state.verbForm == true ? this.props.Positives.map(item => <p className='p-list-conjugation mb-1' key={item}>{item}</p>) : this.props.Negatives.map(item => <p className='p-list-conjugation mb-1' key={item}>{item}</p>)}
+							{this.state.verbForm == true ? this.props.Positives.map(item => <p className='size-18 mb-1' key={item}>{item}</p>) : this.props.Negatives.map(item => <p className='size-18 mb-1' key={item}>{item}</p>)}
 						</div>
 					</div>
 				</div>

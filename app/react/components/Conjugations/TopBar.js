@@ -10,7 +10,7 @@ const TopBar = (props) => {
 			<div className="col-sm-3 d-flex justify-content-center align-items-center" onClick={props.ActivateView}>
 				<span className="arrow-back icon-arrow_back"></span>
 			</div>
-			<div className="col-sm-6">
+			<div className="col-sm-6 mt-2 mt-md-0">
 				<InputVerb verbChange={props.getVerb} addVerb={props.addVerb} verbData={props.getData} focus={false}/>
 			</div>
 		</div>
