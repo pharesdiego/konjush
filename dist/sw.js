@@ -1,9 +1,11 @@
 var CACHE_NAME = 'conju-v12';
 
 var FILES = [
-	'bundle.js',
-	'index.html',
-	'index.js',
+	'./',
+	'./bundle.js',
+	'./index.html',
+	'./index.js',
+	'./manifest.json',
 	'https://fonts.googleapis.com/css?family=Roboto'
 ];
 

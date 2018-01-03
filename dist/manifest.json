@@ -1,7 +1,7 @@
 {
   "name": "Conj\u00fcsh",
   "short_name": "Conj\u00fcsh",
-  "start_url": "/",
+  "start_url": "./index.html",
   "icons": 
   [
     {
@@ -38,5 +38,9 @@
   ],
   "theme_color": "#ff5252",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "author": {
+    "name": "Diego Phares",
+    "github": "https://github.com/pharesdiego"
+  },
 }
