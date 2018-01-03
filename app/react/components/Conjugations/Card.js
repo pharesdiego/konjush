@@ -64,11 +64,11 @@ class Card extends React.Component {
 						{this.state.verbForm == true ? this.props.Positives.map((item, index) => 
 
 							<div className='col-12 d-flex' key={item}>
-								<div className="col-2 p-0">
+								<div className="col-3 p-0">
 									<p className="color-gray mb-1 size-18">{pronoms[index]}</p>
 								</div>
 
-								<div className="col-10 p-0 col-lg-9">
+								<div className="p-0">
 									<p className='size-18 mb-1'>{item}</p> 
 								</div>
 							</div>
@@ -78,11 +78,11 @@ class Card extends React.Component {
 							:this.props.Negatives.map((item, index) => 
 
 							<div className='col-12 d-flex' key={item}>
-								<div className="col-2 p-0">
+								<div className="col-3 p-0">
 									<p className="color-gray mb-1 size-18">{pronoms[index]}</p>
 								</div>
 
-								<div className="col-10 p-0 col-lg-9">
+								<div className="p-0">
 									<p className='size-18 mb-1'>{item}</p> 
 								</div>
 							</div>

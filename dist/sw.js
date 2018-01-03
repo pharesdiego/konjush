@@ -1,4 +1,4 @@
-var CACHE_NAME = 'conju-v9';
+var CACHE_NAME = 'conju-v11';
 
 var FILES = [
 	'bundle.js',
