@@ -6,6 +6,7 @@ var FILES = [
 	'./index.html',
 	'./index.js',
 	'./manifest.json',
+	'./public/fonts/ConjüBackground.svg',
 	'https://fonts.googleapis.com/css?family=Roboto'
 ];
 
