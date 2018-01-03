@@ -21,7 +21,6 @@ body,html{
 	background-image: url(../images/ConjüBackground.svg);
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position-y:55px;
 }
 
 ul {
@@ -67,6 +66,6 @@ li{
 	width: 100%;
 	height: 45px;
 	border-bottom: 3px solid $main-color;
-	background-color: transparent;
+	background-color: rgba(249, 249, 249, 0.74);
 	font-size: 22px;
 }
