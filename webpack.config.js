@@ -1,11 +1,11 @@
 const path = require('path');
 
-module.exports = {
+const docs = {
 	entry: path.resolve(__dirname, 'index.js'),
 
 	output: {
 
-		path: path.resolve(__dirname, 'dist'),
+		path: path.resolve(__dirname, 'docs'),
 
 		filename: 'bundle.js'
 	},
@@ -52,3 +52,4 @@ module.exports = {
 
 	}
 }
+module.exports = [dist, docs]
