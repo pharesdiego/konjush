@@ -5,7 +5,7 @@ const Title = (props) => {
 	return (
 
 		<div className='title-box row flex-column h-100 d-flex justify-content-center align-items-center'>
-			<h1 className="title" data-last="Ü">CONJ</h1>
+			<h1 className="title">CONJ<span className='u-letter'>Ü</span>SH</h1>
 			<p className="m-0">A turkish conjugator</p>
 		</div>
 	);

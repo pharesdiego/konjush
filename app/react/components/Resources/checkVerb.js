@@ -9,10 +9,11 @@ var notAllowedStupidCombinations = [
 
 var hasSecureLength = str => (str.length < 20) ? true : false; 
 
+
 var checkVerb = (verb) => {
 
 	if(!notAllowedStupidCombinations.includes(verb)){
-		if(Conjugate.whiteSpaces(verb) == false || Conjugate.whiteSpaces(verb) <= 1){
+		if(Conjugate.whiteSpaces(verb) <= 5){
 
 			if(Conjugate.hasMinLength(verb, 5) && hasSecureLength(verb)){
 

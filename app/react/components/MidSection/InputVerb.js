@@ -5,19 +5,27 @@ const React = require('react'),
 			faces = require('./../Resources/asciiFaces'),
 			formatValue = require('./../Resources/formatValue');
 
+
+const _ = (...fns) => arg => fns.reduce((ref, fn) => fn(ref), arg);
+
+
+const checkAndFormat = _(formatValue, checkVerb);
+
 const InputVerb = (props) => {
 
 	var placeHolder = (props.boolPlaceholder) ? `Write a verb like: ${verbs[random(verbs.length)]} :)` : `Another verb? ${faces[random(faces.length)]}`;
 
 	var changeStateValue = (event) => {
 
-		props.verbChange(formatValue(event.target.value));
+		let formatedVerb = checkAndFormat(event.target.value);
 
-		if(checkVerb(formatValue(event.target.value))){
+		props.verbChange(formatedVerb);
 
-			props.addVerb(formatValue(event.target.value));
+		if(formatedVerb){
 
-			props.verbData(formatValue(event.target.value));
+			props.addVerb(formatedVerb);
+
+			props.verbData(formatedVerb);
 
 			event.target.value = '';
 

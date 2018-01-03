@@ -57,13 +57,43 @@ class Card extends React.Component {
 
 					<div className={"indicator-toggle mb-2 " + (this.state.verbForm ? '' : 'indicator-toggle-right ') + (this.state.expanded ? '' : 'waitIt')}></div>
 
-					<div className={"row no-gutters " + (this.state.expanded ? '' : 'no-expanded')}>
-						<div className="col-2 col-lg-3">
-							{pronoms.map(item => <p className="color-gray mb-1 size-18" key={item}>{item}</p>)}
-						</div>
-						<div className="col-10 col-lg-9">
-							{this.state.verbForm == true ? this.props.Positives.map(item => <p className='size-18 mb-1' key={item}>{item}</p>) : this.props.Negatives.map(item => <p className='size-18 mb-1' key={item}>{item}</p>)}
-						</div>
+					<div className={"row no-gutters d-flex flex-column" + (this.state.expanded ? '' : 'no-expanded')}>
+
+
+
+						{this.state.verbForm == true ? this.props.Positives.map((item, index) => 
+
+							<div className='col-12 d-flex' key={item}>
+								<div className="col-2 p-0">
+									<p className="color-gray mb-1 size-18">{pronoms[index]}</p>
+								</div>
+
+								<div className="col-10 p-0 col-lg-9">
+									<p className='size-18 mb-1'>{item}</p> 
+								</div>
+							</div>
+
+							)
+
+							:this.props.Negatives.map((item, index) => 
+
+							<div className='col-12 d-flex' key={item}>
+								<div className="col-2 p-0">
+									<p className="color-gray mb-1 size-18">{pronoms[index]}</p>
+								</div>
+
+								<div className="col-10 p-0 col-lg-9">
+									<p className='size-18 mb-1'>{item}</p> 
+								</div>
+							</div>
+
+							)
+						}
+
+
+
+
+
 					</div>
 				</div>
 

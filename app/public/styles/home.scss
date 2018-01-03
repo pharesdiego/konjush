@@ -41,14 +41,14 @@ li{
 
 	& h1{
 		font-size: 10vw;
+		text-shadow: 2px 3px #d8d8d8;
 	}
 
 	& p{
 		font-size: calc(8px + 3vw);
 	}
-	
-	& .title:after{
-		content: attr(data-last);
+
+	& .u-letter{
 		color: $main-color;
 	}
 }
