@@ -7,7 +7,11 @@ var FILES = [
 	'./index.js',
 	'./manifest.json',
 	'./public/fonts/ConjüBackground.svg',
-	'https://fonts.googleapis.com/css?family=Roboto'
+	'./public/fonts/icomoon.eot',
+	'./public/fonts/icomoon.svg',
+	'./public/fonts/icomoon.ttf',
+	'./public/fonts/icomoon.woff',
+	'https://fonts.googleapis.com/css?family=Pacifico|Roboto'
 ];
 
 self.addEventListener('install', event => {
