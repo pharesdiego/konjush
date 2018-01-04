@@ -57,7 +57,7 @@ class Card extends React.Component {
 
 					<div className={"indicator-toggle mb-2 " + (this.state.verbForm ? '' : 'indicator-toggle-right ') + (this.state.expanded ? '' : 'waitIt')}></div>
 
-					<div className={"row no-gutters d-flex flex-column" + (this.state.expanded ? '' : 'no-expanded')}>
+					<div className={"row no-gutters d-flex flex-column " + (this.state.expanded ? '' : 'no-expanded')}>
 
 
 

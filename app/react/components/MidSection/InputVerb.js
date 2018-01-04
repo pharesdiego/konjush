@@ -29,6 +29,8 @@ const InputVerb = (props) => {
 
 			event.target.value = '';
 
+			event.target.blur();
+
 			if(typeof props.ActivateView == 'function'){
 				props.ActivateView();
 			}

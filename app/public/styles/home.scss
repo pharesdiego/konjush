@@ -39,12 +39,17 @@ li{
 .title-box{
 
 	& h1{
-		font-size: 10vw;
-		text-shadow: 2px 3px #d8d8d8;
+		font-size: calc(12px + 10vw);
+		font-family: 'Pacifico';
+		color: $crema;
+		text-shadow: 2px 2px #cb9126;
 	}
 
 	& p{
-		font-size: calc(8px + 3vw);
+		font-size: calc(14px + 3vw);
+		font-family: 'Pacifico';
+		color: #3c3c3c;
+		font-weight: bold;
 	}
 
 	& .u-letter{
@@ -56,6 +61,8 @@ li{
 	
 	& a {
 		color: white;
+		font-weight: bold;
+		font-size: 17px;
 	}
 
 	&:not(:last-child){
@@ -67,5 +74,5 @@ li{
 	height: 45px;
 	border-bottom: 3px solid $main-color;
 	background-color: rgba(249, 249, 249, 0.74);
-	font-size: 22px;
+	font-size: 24px;
 }
