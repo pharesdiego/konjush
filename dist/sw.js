@@ -11,9 +11,7 @@ var FILES = [
 	'./public/fonts/icomoon.svg',
 	'./public/fonts/icomoon.ttf',
 	'./public/fonts/icomoon.woff',
-	'https://fonts.googleapis.com/css?family=Pacifico|Roboto',
-	'https://www.googletagmanager.com/gtag/js?id=UA-111928965-1',
-	'//bdv.bidvertiser.com/BidVertiser.dbm?pid=793800&bid=1920359'
+	'https://fonts.googleapis.com/css?family=Pacifico|Roboto'
 ];
 
 self.addEventListener('install', event => {
