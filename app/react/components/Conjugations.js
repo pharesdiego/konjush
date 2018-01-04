@@ -20,6 +20,7 @@ class Conjugations extends React.Component {
 					
 					<TopBar verb={this.props.userVerb} getVerb={this.props.getVerb} addVerb={this.props.addVerb} getData={this.props.getData} ActivateView={this.props.ActivateView}/>
 					<VerbInfo verb={this.props.userVerb} actualVerb={this.props.actualVerb}/>
+					
 					<Cards verbData={this.props.verbData}/>
 
 			</div>
