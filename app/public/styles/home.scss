@@ -61,7 +61,6 @@ li{
 	
 	& a {
 		color: white;
-		font-weight: bold;
 		font-size: 17px;
 	}
 
@@ -75,4 +74,13 @@ li{
 	border-bottom: 3px solid $main-color;
 	background-color: rgba(249, 249, 249, 0.74);
 	font-size: 24px;
+}
+
+
+@media all and (max-height: 600px){
+	
+	.title-box p{
+		display:none;
+	}
+
 }
