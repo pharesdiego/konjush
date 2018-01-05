@@ -1,5 +1,5 @@
 {
-  "name": "Conjugator",
+  "name": "Konjush",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   "author": "Diego Phares",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "turkish-conjugator": "^1.1.24"
+    "turkish-conjugator": "^1.1.25"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
