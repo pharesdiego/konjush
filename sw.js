@@ -1,4 +1,4 @@
-var CACHE_NAME = 'conju-v12';
+var CACHE_NAME = 'conju-v13';
 
 var FILES = [
 	'./',
