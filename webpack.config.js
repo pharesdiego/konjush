@@ -12,7 +12,7 @@ const dist = {
 
 	module: {
 
-		loaders: [
+		rules: [
 
 			{
 				test: /\.jsx?$/,
