@@ -1,44 +1,67 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './index.css';
 
 
-let input;
-const updateInputValue = value => input.value = value;
-
 const InputVerb = props => (
   <input
-    placeholder='lets write'
-    onInput={ () => updateInputValue(input.value) }
-    onFocus={  }
-    onBlur={  }
-    ref={i => input = i}
+    placeholder = "Let's write a verb"
+    value = { props.inputValue }
+    onInput = { event => props.inputValueUpdater(event.target.value) }
+    onFocus = { props.onFocusHandler }
+    onBlur = { props.onFocusHandler }
   />
 )
 
-const putLetterOnInputValue = letter => () => updateInputValue(input.value + letter);
+const LetterHelpers = props => (
+  <div className='helpers-letter'>
+    {
+      ['ş', 'ğ', 'ı', 'ç', 'ü', 'ö']
+        .map(letter => (
+          <span onClick={ () => props.inputValueUpdater(letter) } >
+            { letter } 
+          </span>
+        ))
+    }
+  </div>
+)
 
-
-class InputVerbManager extends Component {
+class InputBoxManager extends Component {
   constructor(props){
     super(props);
-    this.input = false;
+    this.state = {
+      inputValue: '',
+      showHelpers: false
+    }
   }
 
-  onInputHandler = () => {
-    
+  inputValueUpdater = (value) => {
+    this.setState({
+      inputValue: value
+    })
+    console.log(this.state)
   }
 
+  onFocusHandler = () => this.setState({ showHelpers: true })
+  onBlurHandler = () => this.setState({ showHelpers: false })
 
   render(){
     return(
-      <div className='conjugation-input box-shape input-shape w-100 h-100 d-flex'>
-        <InputVerb 
-          onInputHandler = { onInputHandler }
-          onFocusHandler = { onFocusHandler }
-          onBlurHandler = { onBlurHandler }
-          inputElement = { this.input }
-        />
-      </div>
+      <Fragment>
+        <div className='conjugation-input box-shape input-shape w-100 h-100 d-flex'>
+          <InputVerb 
+            inputValueUpdater = { this.inputValueUpdater }
+            onFocusHandler = { this.onFocusHandler }
+            onBlurHandler = { this.onBlurHandler }
+            inputValue = { this.inputValue }
+          />
+        </div>
+        {
+          this.state.showHelpers && 
+            <LetterHelpers
+              inputValueUpdater = { this.inputValueUpdater }
+            />
+        }
+      </Fragment>
     )
   }
 }
@@ -54,23 +77,9 @@ const Conjugation = props => (
         <div className='conjugation-sections component-body-section'>
 
           <div className='conjugation-input-container w-100'>
-            <div className='conjugation-input box-shape input-shape w-100 h-100 d-flex'>
-              <InputVerb />
-            </div>
-
-            <div className='helpers-letter'>
-              {
-                ['ş', 'ğ', 'ı', 'ç', 'ü', 'ö']
-                  .map(letter => (
-                    <span
-                      onClick={ putLetterOnInputValue(letter) }
-                    > 
-                      { letter } 
-                    </span>
-                  ))
-              }
-            </div>
-
+            
+            <InputBoxManager />
+            
           </div>
 
           <div className='verb-name w-100'>
