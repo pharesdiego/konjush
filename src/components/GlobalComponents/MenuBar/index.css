@@ -1,0 +1,17 @@
+.menu-bar {
+  height: 60px;
+  background: linear-gradient(180deg, rgba(236, 2, 2, 0.11),rgba(2, 2, 2, 0.45));
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+}
+
+.menu-bar-container img {
+  width: 30px;
+}
+
+@media all and (min-width: 768px){
+  .menu-bar-container {
+    width: 50%;
+  }
+}

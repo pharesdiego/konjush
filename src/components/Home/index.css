@@ -1,0 +1,30 @@
+.home-sections > div {
+  flex: 1;
+}
+
+.konjush-intro > div > * {
+  text-align: center;
+}
+
+.fake-input > a, .tab-content{
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.tab-content {
+  padding: 10px;
+}
+.tabs {
+  height: 35px;
+}
+.tabs > .tab {
+  flex: 1;
+}
+.tab-info {
+  overflow-y: scroll;
+  max-height: 150px;
+}
+.common-verb-container {
+  padding: 2px 5px;
+  display: inline-block;
+  margin: 5px;
+}

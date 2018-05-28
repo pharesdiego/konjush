@@ -1,0 +1,11 @@
+.conjugation-input {
+  background-color: rgba(120, 120, 120, 0.25);
+}
+
+.conjugation-input > input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding: 0px 25px;
+}
