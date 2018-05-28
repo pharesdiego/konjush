@@ -6,6 +6,10 @@
   bottom: 0;
 }
 
+.menu-bar-container a {
+  padding: 5px;
+}
+
 .menu-bar-container img {
   width: 30px;
 }
