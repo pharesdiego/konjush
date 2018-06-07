@@ -1,0 +1,76 @@
+.settings-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.settings-togglers-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.settings-toggler-title {
+  margin-bottom: 5px;
+}
+.toggler {
+  background-color: white;
+  height: 45px;
+  display: inline-block;
+  transition: 0.2s all;
+  min-width: 250px;
+}
+.toggler:not(:last-child){
+  margin-bottom: 15px;
+}
+
+.toggler:first-child .toggler-arrows span:first-child, .toggler:last-child .toggler-arrows span:last-child {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.toggler-arrows, .toggler-switch, .toggler-tense {
+  height: 100%;
+}
+.toggler-arrows {
+  width: 50px;
+  float: left;
+}
+.toggler-arrows span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.toggler-arrows span svg {
+  width: 9px;
+}
+
+.toggler-arrows span:first-child svg {
+  transform: rotate(-90deg);
+  align-self: flex-end;
+}
+.toggler-arrows span:last-child svg {
+  transform: rotate(90deg);
+  align-self: flex-start;
+}
+.toggler-tense{
+  display: inline-block;
+  font-size: 20px;
+}
+
+.toggler-switch {
+  float: right;
+  width: 55px;
+  cursor: pointer;
+}
+.toggler-switch svg {
+  cursor: pointer;
+  width: 18px;
+  opacity: 0.4;
+}
+
+.toggler--off {
+  background-color: #dedede;
+  box-shadow: initial;
+}
+
+.toggler--off .toggler-tense, .toggler--off .toggler-arrows {
+  opacity: 0.5;
+}

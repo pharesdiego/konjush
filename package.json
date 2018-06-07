@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "animated": "^0.2.2",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
     "turkish-conjugator": "^2.0.0"
   },

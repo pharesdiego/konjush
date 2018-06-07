@@ -1,6 +1,7 @@
 import React from 'react';
-import './index.css';
+import './home.css';
 import { Link } from 'react-router-dom';
+import createSection from './../GlobalComponents/ComponentSection';
 
 const commonVerbs = ['gelmek', 'gitmek', 'girmek', 'konusmak', 'yasamak', 'sinirlenmek', 'gelmek', 'gitmek', 'girmek', 'konusmak', 'yasamak', 'sinirlenmek', 'gelmek', 'gitmek', 'girmek', 'konusmak', 'yasamak', 'sinirlenmek'];
 
@@ -12,7 +13,7 @@ const FakeInput = props => (
           </div>
       </Link>
     </div>
-)
+);
 
 const KonjushIntro = props => (
   <div className='konjush-intro d-flex justify-center'>
@@ -21,50 +22,45 @@ const KonjushIntro = props => (
         Konjüsh
       </h1>
       <p>
-        a turkish conjugator
+        turkish conjugator
       </p>
     </div>
   </div>
-)
-// home-main-body y home-sections pueden estar en un HOC y usar simplemente los children
-const Home = (props) => (
-  <div className='component'>
-    <div className='component-main'>
-      <div className='home-main-body content-body'>
-        <div className='home-sections component-body-section'>
-          <KonjushIntro/>
-          <FakeInput/>
+);
 
-          <div className='tab-container w-100'>
-            <div className='tab-content box-shape w-100 h-100'>
+const VerbsBox = props => (
+  <div className='tab-container w-100'>
+      <div className='tab-content box-shape w-100 h-100'>
 
-              <div className='tabs d-flex'>
-                <div className='tab d-flex justify-center align-content-center'>
-                  Recent Verbs
-                </div>
-                <div className='tab d-flex justify-center align-content-center'>
-                  Common Verbs
-                </div>
-              </div>
-
-              <div className='tab-info'>
-                {
-                  commonVerbs.map(verb => (
-                    <div className='common-verb-container'>
-                      { verb }
-                    </div>
-                  ))
-                }
-        
-              </div>
-
-            </div>
+        <div className='tabs d-flex'>
+          <div className='tab d-flex justify-center align-content-center'>
+            Recent Verbs
           </div>
-
+          <div className='tab d-flex justify-center align-content-center'>
+            Common Verbs
+          </div>
         </div>
+
+        <div className='tab-info'>
+          {
+            commonVerbs.map((verb, i) => (<div className='common-verb-container' key={i}> { verb } </div>))
+          }
+        </div>
+
       </div>
     </div>
-  </div>
+);
+// home-main-body y home-sections pueden estar en un HOC y usar simplemente los children
+let HomeComponent = createSection({
+  section: 'home'
+});
+
+const Home = (props) => (
+  <HomeComponent>
+    <KonjushIntro/>
+    <FakeInput/>
+    <VerbsBox/>
+  </HomeComponent>
 )
 
 export default Home;

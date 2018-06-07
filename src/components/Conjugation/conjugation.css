@@ -1,0 +1,71 @@
+.conjugation-sections {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.conjugation-input {
+  background-color: white;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.conjugation-input > input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+  padding: 0px 15px;
+}
+
+.helpers-letter {
+  background-color: white;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding: 2px;
+}
+
+.helpers-letter span {
+  padding: 0px 5px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.helpers-letter span:not(:last-child){
+  margin-right: 5px;
+}
+
+.verb-name {
+  padding: 10px 0px;
+}
+
+.verb-name p {
+  font-size: 22px;
+}
+
+.card-container {
+  background: white;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.card-container .card-title-tense p {
+  font-size: 18px;
+}
+.toggle-verb-mode-container {
+  padding: 10px 0px;
+  color: gray;
+}
+.toggle-verb-mode-container div {
+  cursor: pointer;
+  transition: 0.2s all ease-out;
+}
+.conjugation-content-result:not(:last-child) {
+  margin-bottom: 2px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.conjugation-content-result .content-result-pronoun {
+  min-width: 50px;
+}
+.conjugation-content-result .content-result-conjugation {
+  word-break: break-all;
+}
