@@ -8,10 +8,16 @@
 
 .menu-bar-container a {
   padding: 5px;
+  opacity: 0.6;
+  transition: 0.3s all;
 }
 
 .menu-bar-container svg {
   width: 30px;
+}
+
+.menu--selected {
+  opacity: 1 !important;
 }
 
 @media all and (min-width: 768px){

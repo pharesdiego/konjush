@@ -1,0 +1,28 @@
+wikipedia api
+polyfill for seo
+service worker
+react-redux Provider, Connect, shouldComponentRender
+
+cambiar titulo de pagina
+manifest
+favicon
+Conjugation hacer un bash con los 3 dispatch
+
+quitar la imagen xxx
+ver si es posible hacer barra/linea inferior que sigue el menu cuando se da click y cambia de vista <<>>NOP
+hacer titilador en input fake xxx
+arreglar todo el codigo xxx
+error denmek en aorist turkish-conjugator xxx
+focus() input xxx
+responsive xxx
+verb alert for the verb with two different conjugations xxx
+
+-- sonra
+dangerouslySetINNERHTML, <Layout>
+
+challenge
+reverse braces
+[{()}] -> ({[]})
+[[[()]]] => ([[[]]])
+()()() -> ()()()
+([]){([])} -> [()][({})]

@@ -1,59 +1,9 @@
-import { SETTING_TOGGLE_VISIBILITY, SETTING_ORDER } from './../actions';
+import { SETTING_TOGGLE_VISIBILITY, SETTING_ORDER } from './actions';
+import initialState from './initialState';
 
-let initialState = [
-  {
-    title: 'Aorist',
-    tense: 'aorist',
-    visible: true
-  },
-  {
-    title: 'Gerund',
-    tense: 'gerund',
-    visible: true
-  },
-  {
-    title: 'Future',
-    tense: 'future',
-    visible: true
-  },
-  {
-    title: 'Simple Past',
-    tense: 'simple-past',
-    visible: true
-  },
-  {
-    title: 'Miş Past',
-    tense: 'mis-past',
-    visible: true
-  },
-  {
-    title: 'Past Continuous',
-    tense: 'past-continuous',
-    visible: true
-  },
-  {
-    title: 'Present Indefinite',
-    tense: 'present-indefinite',
-    visible: true
-  },
-  {
-    title: 'Gerund Indefinite',
-    tense: 'present-continuous-indefinite',
-    visible: true
-  },
-  {
-    title: 'Future Indefinite',
-    tense: 'future-indefinite',
-    visible: true
-  },
-  {
-    title: 'Potential',
-    tense: 'potential',
-    visible: true
-  }
-];
+const appState = (JSON.parse(window.localStorage.getItem('store')) || initialState).settings;
 
-const settings = (state = initialState, action) => {
+const settings = (state = appState, action) => {
 
   switch(action.type){
     case SETTING_TOGGLE_VISIBILITY:

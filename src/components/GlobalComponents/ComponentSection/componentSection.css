@@ -11,6 +11,8 @@
 .content-body {
   width: 100%;
   height: calc(100% - 60px);
+  display: flex;
+  justify-content: center;
 }
 
 .component .component-main {
@@ -25,4 +27,6 @@
   display: flex;
   flex-direction: column;
   padding: 25px;
+  padding-bottom: 10px;
+  max-width: 1440px;
 }

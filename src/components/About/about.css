@@ -1,0 +1,29 @@
+.about-mission-container{
+  overflow-y: auto;
+  background-color: white;
+  padding: 25px;
+}
+.about-mission p:not(:last-child){
+  margin-bottom: 10px;
+}
+.about-mission a {
+  font-weight: bold;
+  color: black;
+}
+.about-mission h1 {
+  font-family: 'Pacifico';
+}
+
+.about-links-container {
+  justify-content: space-around;
+}
+.about-links-container a{
+  width: 40%;
+  padding: 10px;
+  min-width: 85px;
+}
+@media all and (min-width: 768px){
+  .about-mission-container {
+    width: 50%;
+  }
+}

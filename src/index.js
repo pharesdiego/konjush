@@ -14,7 +14,14 @@ const render = () => {
     </BrowserRouter>, document.getElementById('root')
   )
 }
+
 Store.subscribe(() => {
+  try{
+    window.localStorage.setItem('store', JSON.stringify(Store.getState()))
+  }
+  catch(e){
+    console.log('your browser cant handle window.localStorage');
+  }
   render();
 });
 render();

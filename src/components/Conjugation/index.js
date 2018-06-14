@@ -4,24 +4,25 @@ import Conjugate from 'turkish-conjugator';
 import createSection from './../GlobalComponents/ComponentSection';
 import InputBoxManager from './InputBoxManager';
 import ConjugatedCards from './ConjugatedCards';
-import { boundReceiveConjugations, boundReceiveURL } from './../../boundedActions';
+import { boundReceiveConjugationsUrlAndRecentVerb } from './../../boundedActions';
 import './conjugation.css';
 
 
 let ConjugationComponent = createSection({
-  section: 'conjugation'
+  section: 'conjugation',
+  addedClass: 'gray-scroll'
 });
 
 const Conjugation = props => {
 
   let verbRouteManager = verb => {
     props.history.push('/conjugation/' + verb)
-    boundReceiveURL('/conjugation/' + verb);
-    boundReceiveConjugations({
-      conjugations: Conjugate.it(verb)
+    boundReceiveConjugationsUrlAndRecentVerb({
+      verb,
+      conjugations: Conjugate.it(verb),
+      url: '/conjugation/' + verb
     })
   }
-
   return(
     <ConjugationComponent>
       <InputBoxManager verbRouteManager = { verbRouteManager } />

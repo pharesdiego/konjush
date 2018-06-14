@@ -1,4 +1,13 @@
-import { SETTING_ORDER, SETTING_TOGGLE_VISIBILITY, CARD_VIEW_NEGATIVE, CARD_VIEW_POSITIVE, RECEIVE_CONJUGATIONS, UPDATE_INPUT, RECEIVE_URL } from './../actions';
+import { 
+  SETTING_ORDER, 
+  SETTING_TOGGLE_VISIBILITY, 
+  CARD_VIEW_NEGATIVE, 
+  CARD_VIEW_POSITIVE, 
+  RECEIVE_CONJUGATIONS, 
+  RECEIVE_URL,
+  ADD_RECENT_VERB,
+  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB
+ } from './../reducers/actions';
 import Store from './../store/konjushStore';
 
 export const boundSettingOrder = ({ from, to }) => {
@@ -44,9 +53,20 @@ export const boundReceiveURL = (url) => {
   })
 }
 
-export const boundUpdateInput = (input) => {
+export const boundAddRecentVerb = verb => {
   Store.dispatch({
-    type: UPDATE_INPUT,
-    input
+    type: ADD_RECENT_VERB,
+    verb
+  })
+}
+
+export const boundReceiveConjugationsUrlAndRecentVerb = (
+  { conjugations, url, verb }
+) => {
+  Store.dispatch({
+    type: RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB,
+    conjugations,
+    url,
+    verb
   })
 }

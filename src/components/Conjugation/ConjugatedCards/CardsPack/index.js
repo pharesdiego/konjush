@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { boundCardViewNegative, boundCardViewPositive } from './../../../../boundedActions';
 import Store from './../../../../store/konjushStore';
+import FadeAndTranslationTransition from './../../../GlobalComponents/Transitions';
+
 const CardsPack = props => (
   <div className='cardsPack-container w-100 h-100 d-flex align-items-center dir-column'>
     {
       props.conjugations.map(
-        ({title, conjugation, tense, positive, at}) => <Card
+        ({title, conjugation, tense, positive, at}, index) => <Card
                                                         title = { title }
                                                         conjugation = { conjugation }
                                                         key = { tense }
                                                         isPositive = { positive }
                                                         at = { at }
-                                                        pronouns = { ['Ben', 'Sen', 'O', 'Biz', 'Siz', 'Onlar'] }
                                                         url = { props.url }
+                                                        index = { index }
                                                       />
       )
     }
@@ -28,6 +30,7 @@ class Card extends Component {
 
   render(){
     return(
+      <FadeAndTranslationTransition duration={200} delay={ this.props.index * 10 }> 
       <div className='card-container w-100 box-shape'>
         <div className='card-title-tense'>
           <p className='text-center'>{ this.props.title }</p>
@@ -48,27 +51,34 @@ class Card extends Component {
           {
             this.props.isPositive
             ? this.props.conjugation.positive.map(
-                (result, i) => (
-                  <div className='conjugation-content-result d-flex' key={ i }>
-                    <p className='content-result-pronoun'>{ this.props.pronouns[i] }</p>
-                    <p className='content-result-conjugation'>{ result }</p>
-                  </div>
-                )
+              (result, i) => (
+                <CardConjugationRow index={i} result={result} key={i} />   
               )
+            )
             : this.props.conjugation.negative.map(
-                (result, i) => (
-                  <div className='conjugation-content-result d-flex' key={ i }>
-                    <p className='content-result-pronoun'>{ this.props.pronouns[i] }</p>
-                    <p className='content-result-conjugation'>{ result }</p>
-                  </div>
-                )
+              (result, i) => (
+                <CardConjugationRow index={i} result={result} key={i} />   
               )
+            )
           }
-
         </div>
       </div>
+      </FadeAndTranslationTransition>
     )
   }
 };
+
+
+const CardConjugationRow = props => {
+  const pronouns = ['Ben', 'Sen', 'O', 'Biz', 'Siz', 'Onlar'];
+
+  return(
+    <div className='conjugation-content-result d-flex'>
+      <p className='content-result-pronoun'>{ pronouns[props.index] }</p>
+      <p className='content-result-conjugation'>{ props.result }</p>
+    </div>
+  )
+}
+
 
 export default CardsPack;

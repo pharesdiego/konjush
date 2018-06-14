@@ -2,73 +2,93 @@ import React, { Component } from 'react';
 import Store from './../../../store/konjushStore';
 import { boundSettingOrder, boundSettingToggleVisibility } from './../../../boundedActions/';
 import { ArrowIcon, ViewIcon } from '../../GlobalComponents/Icons';
+import Transition from './../../GlobalComponents/Transitions';
+import FlipMove from 'react-flip-move';
 
-const Togglers = props => (
-  <div className='settings-togglers-container w-100'>
-    <div className='settings-togglers'>
-      {
-        Store.getState().settings.map(
-          ({ title, tense, visible }, index) => <Toggler
-                                                  title = { title }
-                                                  index = { index }
-                                                  tense = { tense }
-                                                  visible = { visible }
-                                                  key = { tense }
-                                                />
-        )
-      }
-    </div>
-  </div>
-);
+class Togglers extends Component {
+                                                                                      
+  render(){
+    let togglers = Store.getState().settings.map(({ title, tense, visible }, index) => <Toggler 
+                                                                                          title = {title}
+                                                                                          tense = {tense}
+                                                                                          visible = {visible} 
+                                                                                          key={tense}
+                                                                                          index={index} />);
 
-const TogglerArrows = props => (
-  <div className='toggler-arrows d-flex dir-column'>
-    {
-      [-1, 1]
-        .map( (N, i) => (
-            <span
-              key = {i}
-              className = 'd-flex justify-center'
-              onClick = { _ =>  boundSettingOrder({ from: props.index, to: props.index + N })} >
-              <ArrowIcon/>
-            </span>
-          ))
-    }
-  </div>
-);
+    return (
+        <div className='settings-togglers-container w-100 gray-scroll'>
+          <div className='settings-togglers'>
+            <FlipMove
+              duration={200}
+              staggerDurationBy={200}
+              easing='cubic-bezier(0, 0, 0, 0.93)'
+              children = { togglers } />
+          </div>
+        </div>
+    )
+  }
+}
 
-const TogglerTitle = props => (
-  <div className='toggler-tense d-flex justify-center'>
-    <div className='d-flex justify-center align-items-center w-100 h-100'>
-      { props.title }
-    </div>
-  </div>
-);
+const TogglerArrows = props => {
+  const { index } = props;
+  let arrowSpans = [-1, 1].map((n, i) => <span 
+                                            key= {i} 
+                                            className = 'd-flex justify-center'
+                                            onClick = { _ => boundSettingOrder({ from: index, to: index + n}) }
+                                            children = { <ArrowIcon /> }
+                                          />)
+
+  return (
+    <div
+      className='toggler-arrows d-flex dir-column'
+      children = { arrowSpans } />
+  )
+}
+
+class TogglerTitle extends Component {
+  render(){
+    return(
+      <div className='toggler-tense d-flex justify-center'>
+        <div 
+          className='d-flex justify-center align-items-center w-100 h-100'
+          children = { this.props.title }
+        />
+      </div>
+    )
+  }
+};
 
 const TogglerVisibility = props => (
   <div 
     className = 'toggler-switch d-flex justify-center align-items-center'
     onClick = { () => boundSettingToggleVisibility(props.tense) }
-  >
-    <ViewIcon />
-  </div>
+    children = { <ViewIcon /> } 
+  />
 );
 
-class NoUpdate extends Component {
-  shouldComponentUpdate(){
-    return false;
+class Toggler extends Component {
+
+  shouldComponentUpdate(e){
+    return true
   }
+
   render(){
-    return this.props.children;
+    const { index, visible, title, tense } = this.props
+    let activeTogglerClass = 'toggler box-shape w-100' + ( visible ? '' : ' toggler--off' )
+  
+    return (
+      <Transition duration={200} delay={ index * 10 }>
+        <div className='w-100 toggler-wrapper'>
+          <div className= { activeTogglerClass }>
+            <TogglerArrows index={ index } />
+            <TogglerTitle title={ title } />
+            <TogglerVisibility tense={ tense } />
+          </div>
+        </div>
+      </Transition>
+    )
   }
 }
-const Toggler = props => (
-  <div className= { 'toggler box-shape w-100' + ( props.visible ? '' : ' toggler--off' ) }>
-    <TogglerArrows index={ props.index }/>
-    <NoUpdate>
-      <TogglerTitle title={ props.title }/>
-      <TogglerVisibility tense = { props.tense }/>
-    </NoUpdate>
-  </div>
-);
+
+
 export default Togglers;

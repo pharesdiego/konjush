@@ -5,26 +5,53 @@
 .konjush-intro > div > * {
   text-align: center;
 }
-
+.konjush-intro h1 {
+  font-size: calc(32px + 3.5vw);
+  font-family: 'Pacifico';
+}
+.konjush-intro p {
+  font-size: 20px;
+}
+a.fake-input-container {
+  font-size: 20px;
+  border-bottom: 2px solid white;
+}
 .fake-input > a, .tab-content{
   background-color: rgba(255, 255, 255, 0.15);
 }
-
+.fake-input > a {
+  cursor: text;
+}
+.tab-container {
+  max-height: 33.33333%;
+}
 .tab-content {
   padding: 10px;
 }
 .tabs {
-  height: 35px;
+  min-height: 35px;
 }
 .tabs > .tab {
   flex: 1;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tabhome--active {
+  opacity: 1 !important;
 }
 .tab-info {
-  overflow-y: scroll;
-  max-height: 150px;
+  overflow-y: auto;
 }
+
 .common-verb-container {
   padding: 2px 5px;
   display: inline-block;
   margin: 5px;
+}
+
+@media all and (min-width: 768px){
+  .home-sections > div {
+    width: 50%;
+  }
 }

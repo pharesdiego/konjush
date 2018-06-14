@@ -1,0 +1,40 @@
+export const commonVerbs = [
+  "aramak",
+  "alışmak",
+  "anlaşmak",
+  "affetmek",
+  "bırakmak",
+  "büyümek",
+  "bakmak",
+  "benzemek",
+  "bilmek",
+  "düşmek",
+  "dövmek",
+  "davranmak",
+  "düşünmek",
+  "gelmek",
+  "gitmek",
+  "getirmek",
+  "girmek",
+  "içmek",
+  "istemek",
+  "izlemek",
+  "kaybetmek",
+  "kapatmak",
+  "kullanmak",
+  "nefret etmek",
+  "söylemek",
+  "sanmak",
+  "tutmak",
+  "uyumak",
+  "yapmak",
+  "yazmak",
+  "yardım etmek",
+  "yemek",
+  "özlemek"
+]
+
+export const specialVerbs = [
+  'yenmek',
+  'konmak'
+]

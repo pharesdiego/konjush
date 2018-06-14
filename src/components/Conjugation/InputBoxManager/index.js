@@ -4,69 +4,63 @@ import { verify } from 'turkish-conjugator';
 class InputBoxManager extends Component {
   constructor(props){
     super(props);
-    this.inputElement = null;
-    this.isReady = false;
+    this.inputElement = React.createRef();
     this.state = {
       inputValue: '',
       isReady: false
     }
   }
-
   componentDidMount(){
-    this.setState({
-      isReady: true
-    })
+    window.location.pathname === '/conjugation' && this.inputElement.current.focus();
+    this.setState({ isReady: true });
   }
 
   inputValueUpdater = (value) => {
-    this.inputElement.value = value;
-    this.setState({
-      inputValue: this.inputElement.value
-    })
-    // verify that the passed verb is correct
-    if(verify.isVerb(value)){
-      this.props.verbRouteManager(value);
-      this.inputElement.value = '';
-      this.setState({
-        inputValue: this.inputElement.value
-      })
-    }
+    this.setState({ inputValue: value })
+    this.setRouteToNewVerbAndCleanInput(verify.isTurkishVerb(value));
   }
 
-  getInputElement = element => this.inputElement = element;
+  setRouteToNewVerbAndCleanInput = (verb) => {
+    if(verb){
+      this.inputElement.current.blur();
+      this.setState({ inputValue: '' });
+      this.props.verbRouteManager(verb);
+    }
+  }
 
   render(){
     return(
       <div className='conjugation-input-container w-100'>
 
-        <div className='conjugation-input box-shape input-shape w-100 h-100 d-flex'>
           <InputVerb 
+            inputValue = { this.state.inputValue }
             inputValueUpdater = { this.inputValueUpdater }
-            inputValue = { this.inputValue }
-            getInputElement = { this.getInputElement }
+            reactRef = { this.inputElement }
           />
-        </div>
 
-        { 
-          this.state.isReady && 
-          <LetterHelpers
-            inputValueUpdater = { this.inputValueUpdater }
-            inputElement = { this.inputElement }
-          />
-        }
+          {
+            this.state.isReady &&
+            <LetterHelpers
+              inputValue = { this.state.inputValue }
+              inputValueUpdater = { this.inputValueUpdater }
+              inputElement = { this.inputElement.current }
+            />
+          }
       </div>
     )
   }
 }
 
 const InputVerb = props => (
-  <input
-    value = { props.inputValue }
-    placeholder = "Let's write a verb"
-    ref = { element => props.getInputElement(element) }
-    onInput = { event => props.inputValueUpdater(event.target.value) }
-  />
-)
+  <div className='conjugation-input box-shape input-shape w-100 h-100 d-flex'>
+    <input
+      value = { props.inputValue }
+      placeholder = "Let's write a verb"
+      ref = { props.reactRef }
+      onInput = { event => props.inputValueUpdater(event.target.value) }
+    />
+  </div>
+); 
 
 const LetterHelpers = props => (
   <div className='helpers-letter box-shape'>
@@ -74,11 +68,11 @@ const LetterHelpers = props => (
       ['ş', 'ğ','ç','ı', 'ü', 'ö']
         .map((letter,i) => (
           <span 
-          onClick={() => {
-              props.inputValueUpdater(props.inputElement.value + letter)
-              props.inputElement.focus();
-            }}
-          key = { i }
+            onClick={() => {
+                props.inputValueUpdater(props.inputValue + letter);
+                props.inputElement.focus();
+              }}
+            key = { i }
           > 
             { letter } 
           </span>
