@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "classnames": "^2.2.6",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",
     "react-flip-move": "^3.0.2",
-    "react-motion": "^0.5.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-transition-group": "^2.3.1",
     "redux": "^4.0.0",
-    "redux-batched-actions": "^0.3.0",
+    "styled-components": "^3.3.2",
     "turkish-conjugator": "^2.0.2"
   },
   "scripts": {

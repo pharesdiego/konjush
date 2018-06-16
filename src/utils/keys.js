@@ -1,0 +1,1 @@
+export const createKey = _ => parseInt(Math.random() * 100, 10);

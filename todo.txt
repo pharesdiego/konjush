@@ -1,12 +1,13 @@
 wikipedia api
-polyfill for seo
-service worker
-react-redux Provider, Connect, shouldComponentRender
-
-cambiar titulo de pagina
-manifest
-favicon
-Conjugation hacer un bash con los 3 dispatch
+polyfill for seo xxx
+arreglar problema de no vocales en metodo Verify.isTurkishVerb
+react-redux Provider, Connect, shouldComponentRender xxx
+error de titulo con caracteres especiales: dusunmek xxx
+service worker xxx 
+cambiar titulo de pagina xxx
+manifest xxx
+favicon xxx
+Conjugation hacer un bash con los 3 dispatch xxx
 
 quitar la imagen xxx
 ver si es posible hacer barra/linea inferior que sigue el menu cuando se da click y cambia de vista <<>>NOP
@@ -19,6 +20,7 @@ verb alert for the verb with two different conjugations xxx
 
 -- sonra
 dangerouslySetINNERHTML, <Layout>
+hacer un mejor batching-redux
 
 challenge
 reverse braces

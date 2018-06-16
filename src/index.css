@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body, html, #root, .App {
@@ -101,6 +103,10 @@ a {
   color: black;
 }
 
+.tabhome--active {
+  opacity: 1 !important;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -120,4 +126,30 @@ a {
 
 .gray-scroll::-webkit-scrollbar-thumb {
   background-color: #c5c5c5;
+}
+
+.no-overflow-x{
+  overflow-x: hidden;
+}
+.auto-overflow-y{
+  overflow-y: auto;
+}
+.toggler--off {
+  background-color: #dedede;
+  box-shadow: initial;
+}
+.toggler--off div {
+  opacity: 0.5;
+}
+.toggler--off div:nth-child(2){
+  opacity: 1;
+}
+
+.home-sections > div {
+  flex: 1;
+}
+@media all and (min-width: 768px){
+  .home-sections > div {
+    width: 50%;
+  }
 }

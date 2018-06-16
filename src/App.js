@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import Conjugation from './components/Conjugation';
-import Learn from './components/Learn';
-import Settings from './components/Settings';
-import About from './components/About';
-import MenuBar from './components/GlobalComponents/MenuBar';
+import MenuBar from './components/MenuBar';
+import Conjugation from './pages/Conjugation';
+import Learn from './pages/Learn';
+import About from './pages/About';
+import Home from './pages/Home';
+import Settings from './pages/Settings';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-        <div className='gradient'></div>
+        <div className='gradient' />
         <Switch>
           <Route path='/learn' component={ Learn }/>
           <Route path='/conjugation' component={ Conjugation }/>

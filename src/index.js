@@ -1,23 +1,26 @@
+import 'babel-polyfill';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import Store from './store/konjushStore';
-
+import store from './store';
+import { Provider } from 'react-redux';
+import './index.css';
 
 const render = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </BrowserRouter>, document.getElementById('root')
   )
 }
 
-Store.subscribe(() => {
+store.subscribe(() => {
   try{
-    window.localStorage.setItem('store', JSON.stringify(Store.getState()))
+    window.localStorage.setItem('store', JSON.stringify(store.getState()))
   }
   catch(e){
     console.log('your browser cant handle window.localStorage');

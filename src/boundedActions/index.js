@@ -8,7 +8,7 @@ import {
   ADD_RECENT_VERB,
   RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB
  } from './../reducers/actions';
-import Store from './../store/konjushStore';
+import Store from './../store';
 
 export const boundSettingOrder = ({ from, to }) => {
   Store.dispatch({
