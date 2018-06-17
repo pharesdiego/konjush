@@ -10,22 +10,22 @@ const createButton = ({ to, icon }) => _ => (
 )
 
 let SettingsLink = createButton({
-  to: '/settings',
+  to: '/konjush/settings',
   icon: <WrenchIcon/>
 });
 
 let HouseLink = createButton({
-  to: '/',
+  to: '/konjush/',
   icon: <HouseIcon/>
 });
 
 let LearnLink = createButton({
-  to: '/learn',
+  to: '/konjush/learn',
   icon: <LayersIcon/>
 });
 
 let AboutLink = createButton({
-  to: '/about',
+  to: '/konjush/about',
   icon: <InfoIcon/>
 });
 
@@ -85,9 +85,9 @@ const MenuBar = props => {
 }
 
 const controlDocumentTitle = pathname => {
-  let currentPage = pathname.split('/')[1] || 'home';
-  let verb = currentPage === 'conjugation' && pathname.split('/')[2];
-  document.title = decodeURI(upFirstLetter(verb || currentPage) + ' | Konjüsh');
+  let currentPage = pathname.split('/')[2] || 'home';
+  let verb = currentPage === 'conjugation' && pathname.split('/')[3];
+  document.title = upFirstLetter(decodeURI((verb || currentPage) + ' | Konjüsh'));
 }
 
 export default MenuBar;

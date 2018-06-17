@@ -10,9 +10,9 @@ const VerbLinkContainer = styled.div`
   margin: 5px;
 `
 const LinkToVerb = ({ index, verb }) => {
-  const url = '/conjugation/' + verb;
+  const url = '/konjush/conjugation/' + verb;
   return (
-    <Transition duration={200} delay={ index * 5 }>
+    <Transition duration={200} delay={ index * 5 < 200 ? index * 5 : 200 }>
       <VerbLinkContainer>
         
         <Link 

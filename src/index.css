@@ -63,7 +63,7 @@ a {
 
 .gradient {
   position: relative;
-  background: radial-gradient(circle at 75% 5%,#ff1919,#f78bf7);
+  background: radial-gradient(circle at 75% 5%,#ff0000,#ff65ff);
   width: 100%;
   min-width: 150%;
   min-height: 150%;
@@ -135,7 +135,7 @@ a {
   overflow-y: auto;
 }
 .toggler--off {
-  background-color: #dedede;
+  background-color: #dedede !important;
   box-shadow: initial;
 }
 .toggler--off div {

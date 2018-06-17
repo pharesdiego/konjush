@@ -12,7 +12,7 @@ const Main = Component.extend`
   top: 0;
 `
 const SectionLayout = styled.div.attrs({
-  className: props => classNames(props.section + '-body')
+  className: props => classNames(props.section + '-body', 'd-flex justify-center')
 })`
   background-color: ${props => props.isHome ? 'transparent' : '#f1f1f1' };
   color: ${props => props.isHome ? 'white' : 'black'};

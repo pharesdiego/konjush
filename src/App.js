@@ -14,11 +14,11 @@ class App extends Component {
       <div className="App">
         <div className='gradient' />
         <Switch>
-          <Route path='/learn' component={ Learn }/>
-          <Route path='/conjugation' component={ Conjugation }/>
-          <Route path='/settings' component={ Settings }/>
-          <Route path='/about' component={ About }/>
-          <Route path='/' component={ Home }/>
+          <Route path='/konjush/learn' component={ Learn }/>
+          <Route path='/konjush/conjugation' component={ Conjugation }/>
+          <Route path='/konjush/settings' component={ Settings }/>
+          <Route path='/konjush/about' component={ About }/>
+          <Route path='/konjush/' component={ Home }/>
         </Switch>
         <MenuBar />
       </div>

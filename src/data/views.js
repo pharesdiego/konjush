@@ -74,7 +74,7 @@ export const AboutData = {
   The second mission is to reach more and more students,
   you can contribute with this by sharing Konjüsh with your friends, group mates
   or with anyone who wants to learn Turkish. Also, if you click
-  <a href='' target='blank'> this adfly link </a>
+  <a href='http://zipansion.com/1aV1I' target='blank'> this adfly link </a>
   you will help Konjüsh to get its own .com domain!
   ___
   Konjüsh is an open source project based on the turkish-conjugator 

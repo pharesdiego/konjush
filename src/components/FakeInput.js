@@ -18,7 +18,7 @@ const StyledLink = styled(Link).attrs({
 
 const FakeInput = props => (
   <Container>
-    <StyledLink to='/conjugation'>
+    <StyledLink to='/konjush/conjugation'>
         <div
           className='w-100 d-flex justify-center align-items-center'
           children='Write a verb' />

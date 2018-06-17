@@ -10,7 +10,7 @@ class InputBoxManager extends Component {
     this.state = { inputValue: '', isReady: false }
   }
   componentDidMount(){
-    window.location.pathname === '/conjugation' && this.inputElement.current.focus();
+    window.location.pathname === '/konjush/conjugation' && this.inputElement.current.focus();
     this.setState({ isReady: true });
   }
 

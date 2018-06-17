@@ -9,17 +9,17 @@ import ConjugatedCards from './../components/ConjugatedCards';
 const Conjugation = props => {
 
   const verbRouteManager = verb => {
-    props.history.push('/conjugation/' + verb)
+    props.history.push('/konjush/conjugation/' + verb)
     boundReceiveConjugationsUrlAndRecentVerb({
       verb,
       conjugations: Conjugate.it(verb),
-      url: '/conjugation/' + verb
+      url: '/konjush/conjugation/' + verb
     })
   }
   return(
     <Layout section='conjugation' addedClass='gray-scroll no-overflow-x auto-overflow-y'>
       <InputBoxManager verbRouteManager = { verbRouteManager } />
-      <Route exact path='/conjugation/:verb' component={ ConjugatedCards }/>
+      <Route exact path='/konjush/conjugation/:verb' component={ ConjugatedCards }/>
     </Layout>
   )
 }

@@ -1,6 +1,6 @@
 let initialState = {
   conjugator: {
-    url: '/conjugation',
+    url: '/konjush/conjugation',
     conjugations: false,
     cardStates: [
       { positive: true },
