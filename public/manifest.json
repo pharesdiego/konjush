@@ -36,8 +36,8 @@
     }
 
   ],
-  "theme_color": "#ff5252",
-  "background_color": "#ff5252",
+  "theme_color": "#ff2865",
+  "background_color": "#ff2865",
   "display": "standalone",
   "author": {
     "name": "Diego Phares",
