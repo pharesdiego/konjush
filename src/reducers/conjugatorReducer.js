@@ -1,51 +1,29 @@
 import { 
-  RECEIVE_CONJUGATIONS, 
   RECEIVE_URL, 
-  ADD_RECENT_VERB,
-  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB,
+  RECEIVE_URL_AND_RECENT_VERB,
   CARD_TOGGLE_VIEW_STATE
 } from './actions';
 
 import initialState from './initialState';
+import { map, filter } from './../utils/arrays';
 
 const appState = (JSON.parse(window.localStorage.getItem('store')) || initialState).conjugator;
 
 const conjugator = (state = appState, action) => {
   switch(action.type){
-    // case CARD_VIEW_NEGATIVE:
-    //   return {
-    //     ...state,
-    //     cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: false } : cardState)
-    //   }
-    // case CARD_VIEW_POSITIVE:
-    //   return {
-    //     ...state,
-    //     cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: true } : cardState)
-    //   }
     case CARD_TOGGLE_VIEW_STATE:
       return {
         ...state,
-        cardStates: state.cardStates.map((cardState, index) => index === action.at ? action.view : cardState)
-      }
-    case RECEIVE_CONJUGATIONS:
-      return {
-        ...state,
-        conjugations: action.conjugations
+        cardStates: map(state.cardStates, (cardState, index) => index === action.at ? action.view : cardState)
       }
     case RECEIVE_URL:
       return {
         ...state,
         url: action.url
       }
-    case ADD_RECENT_VERB:
+    case RECEIVE_URL_AND_RECENT_VERB:
       return {
         ...state,
-        recentVerbs: addRecentVerb(state, action)
-      }
-    case RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB:
-      return {
-        ...state,
-        conjugations: action.conjugations,
         url: action.url,
         recentVerbs: addRecentVerb(state, action)
       }
@@ -57,8 +35,8 @@ const conjugator = (state = appState, action) => {
 const addRecentVerb = (state, action) => {
   return [
     action.verb, 
-    ...(state.recentVerbs.includes(action.verb) ? state.recentVerbs.filter(e => e !== action.verb) : state.recentVerbs)
-  ].slice(0, 100)
+    ...(state.recentVerbs.includes(action.verb) ? filter(state.recentVerbs, e => e !== action.verb) : state.recentVerbs)
+  ].slice(0, 200)
 }
 
 export default conjugator;

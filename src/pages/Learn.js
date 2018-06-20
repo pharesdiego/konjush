@@ -4,6 +4,7 @@ import Layout from  './../components/Layout';
 import Section from  './../components/Section';
 import Transition from './../components/Transition';
 import { LearnData } from './../data/views';
+import { map } from './../utils/arrays';
 
 const ResourcesContainer = styled.div.attrs({
   className: 'w-100 gray-scroll'
@@ -17,14 +18,9 @@ const ResourcesContainer = styled.div.attrs({
 
 const Learn = props => {
 
-  const resources = LearnData.resources.map(
-    ({name, type, info, url}) => <Resource
-                                      key={name}
-                                      name={name}
-                                      type={type}
-                                      info={info}
-                                      url={url}
-                                    />
+  const resources = map(
+    LearnData.resources,
+    ({name, type, info, url}) => <Resource key={name} name={name} type={type} info={info} url={url}/>
   )
 
   return (

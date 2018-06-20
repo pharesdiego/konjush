@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import FlipMove from 'react-flip-move';
 import { connect } from 'react-redux';
 import Toggler from './Togglers/Toggler';
+import { map } from './../utils/arrays';
 
 const Container = styled.div.attrs({
   className: 'no-overflow-x auto-overflow-y w-100 gray-scroll'
@@ -16,12 +17,10 @@ class Togglers extends Component {
                                                                            
   render(){
     const { settings } = this.props;
-    const togglers = settings.map(({ title, tense, visible }, index) => <Toggler 
-                                                                          title = {title}
-                                                                          tense = {tense}
-                                                                          visible = {visible} 
-                                                                          key={tense}
-                                                                          index={index}/>);
+    const togglers = map(
+      settings, 
+      ({ title, tense, visible }, index) => <Toggler title={title} tense={tense} visible={visible}  key={tense} index={index} />
+    );
 
     return (
         <Container>

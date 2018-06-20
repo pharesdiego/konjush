@@ -5,6 +5,7 @@ import LinkToVerb from './VerbsBox/LinkToVerb';
 import Tab from './VerbsBox/Tab';
 import { commonVerbs } from './../data/verbs';
 import { createKey } from './../utils/keys';
+import { map } from './../utils/arrays';
 
 const Container = styled.div.attrs({
   className: 'w-100 d-flex'
@@ -25,7 +26,9 @@ const TabsContainer = styled.div.attrs({
 
 const BoxOfVerbsWithLinks = styled.div.attrs({
   className: 'white-scroll auto-overflow-y'
-})``;
+})`
+  padding-bottom: 15px;
+`;
 
 class VerbsBox extends Component {
 
@@ -47,8 +50,10 @@ class VerbsBox extends Component {
     // check if there are recent verbs and if the state say us to show them.
     const avaliableRecentVerbs = recentVerbs.length > 0 && this.state.seeRecentVerbs;
     // if there are avaliableRecentVerbs them we'll use recentVerbs array, else we'll use commonVerbs array for mapping.
-    const verbsWithLinks = (avaliableRecentVerbs ? recentVerbs : commonVerbs)
-                              .map((verb, i) => <LinkToVerb verb={ verb } index={i} key={verb + createKey()} />)
+    const verbsWithLinks = map(
+      (avaliableRecentVerbs ? recentVerbs : commonVerbs),
+      (verb, i) => <LinkToVerb verb={ verb } index={i} key={verb + createKey()} />
+    );
 
     return (
       <Container>

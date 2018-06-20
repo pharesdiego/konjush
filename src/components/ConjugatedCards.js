@@ -7,6 +7,7 @@ import InvalidVerb from './ConjugatedCards/InvalidVerb';
 import WrotedVerb from './ConjugatedCards/WrotedVerb';
 import SpecialVerbConjugationAlert from './ConjugatedCards/SpecialVerbConjugationAlert';
 import { specialVerbs } from './../data/verbs';
+import { map, reduce, find } from './../utils/arrays';
 
 const ConjugatedCards = props => {
   const passedVerb = props.match.params.verb;
@@ -22,12 +23,16 @@ const ConjugatedCards = props => {
 
   const isSpecialVerb = specialVerbs.includes(passedVerb);
 
-  let conjugations = (conjugator.conjugations || Conjugate.it(passedVerb))
-                        .map((conjugation, index) => ({...conjugation, positive: cardStates[index], at: index}));
+  let conjugations = map(
+      Conjugate.it(passedVerb),
+      (conjugation, index) => ({...conjugation, positive: cardStates[index], at: index})
+    );
                                            
-  // reorder conjugations based on settings
-  conjugations = settings
-                    .reduce((a, {tense, visible}) => visible ? [...a, conjugations.find(z => z.tense === tense)] : a, []);
+  conjugations = reduce(
+    settings,
+    (a, {tense, visible}) => visible ? [...a, find(conjugations, z => z.tense === tense)] : a,
+    []
+  );
     return (
       <Fragment>
         <WrotedVerb verb = { passedVerb } />
