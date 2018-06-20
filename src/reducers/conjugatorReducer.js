@@ -1,10 +1,9 @@
 import { 
-  CARD_VIEW_POSITIVE, 
-  CARD_VIEW_NEGATIVE, 
   RECEIVE_CONJUGATIONS, 
   RECEIVE_URL, 
   ADD_RECENT_VERB,
-  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB
+  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB,
+  CARD_TOGGLE_VIEW_STATE
 } from './actions';
 
 import initialState from './initialState';
@@ -13,15 +12,20 @@ const appState = (JSON.parse(window.localStorage.getItem('store')) || initialSta
 
 const conjugator = (state = appState, action) => {
   switch(action.type){
-    case CARD_VIEW_NEGATIVE:
+    // case CARD_VIEW_NEGATIVE:
+    //   return {
+    //     ...state,
+    //     cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: false } : cardState)
+    //   }
+    // case CARD_VIEW_POSITIVE:
+    //   return {
+    //     ...state,
+    //     cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: true } : cardState)
+    //   }
+    case CARD_TOGGLE_VIEW_STATE:
       return {
         ...state,
-        cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: false } : cardState)
-      }
-    case CARD_VIEW_POSITIVE:
-      return {
-        ...state,
-        cardStates: state.cardStates.map((cardState, index) => index === action.at ? { positive: true } : cardState)
+        cardStates: state.cardStates.map((cardState, index) => index === action.at ? action.view : cardState)
       }
     case RECEIVE_CONJUGATIONS:
       return {

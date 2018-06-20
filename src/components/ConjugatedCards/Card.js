@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { boundCardViewNegative, boundCardViewPositive } from './../../boundedActions';
+import { boundCardToggleViewState } from './../../boundedActions';
 import Transition from './../Transition';
 import CardTab from './Card/CardTab';
 import CardConjugationRow from './Card/CardConjugationRow';
@@ -65,12 +65,12 @@ class Card extends Component {
 
           <TabsContainer>
             <CardTab 
-                cardViewType = { () => boundCardViewPositive(at) }
+                cardViewToggle = { () => boundCardToggleViewState({ at, view: true }) }
                 isPositive = { isPositive }
                 text = 'Positive' />
 
             <CardTab 
-                cardViewType = { () => boundCardViewNegative(at) }
+                cardViewToggle = { () => boundCardToggleViewState({ at, view: false }) }
                 isPositive = { !isPositive }
                 text = 'Negative' />
 

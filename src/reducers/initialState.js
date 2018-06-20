@@ -2,18 +2,7 @@ let initialState = {
   conjugator: {
     url: '/konjush/conjugation',
     conjugations: false,
-    cardStates: [
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true },
-      { positive: true }
-    ],
+    cardStates: [true, true, true, true, true, true, true, true, true, true],
     recentVerbs: []
   },
   settings: [
@@ -66,8 +55,8 @@ let initialState = {
       title: 'Potential',
       tense: 'potential',
       visible: true
-    }
-  ]
+    },
+  ],
 }
 
 export default initialState;

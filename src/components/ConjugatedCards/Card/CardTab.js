@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const CardTab = ({ text, isPositive, cardViewType }) => (
+const CardTab = ({ text, isPositive, cardViewToggle }) => (
   <div
-    onClick = { cardViewType }
+    onClick = { cardViewToggle }
     className = {classNames( {'tab--active': isPositive} )}
     children = { text } />
 )

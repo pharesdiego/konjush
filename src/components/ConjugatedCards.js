@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import Conjugate from 'turkish-conjugator';
 import { connect } from 'react-redux';
 import { verify } from 'turkish-conjugator';
-
 import CardsPack from './ConjugatedCards/CardsPack';
 import InvalidVerb from './ConjugatedCards/InvalidVerb';
 import WrotedVerb from './ConjugatedCards/WrotedVerb';
@@ -23,11 +22,10 @@ const ConjugatedCards = props => {
 
   const isSpecialVerb = specialVerbs.includes(passedVerb);
 
-  let conjugations = Conjugate
-                          .it(passedVerb)
-                          .map((conjugation, i) => ({...conjugation, positive: cardStates[i].positive, at: i}));
+  let conjugations = (conjugator.conjugations || Conjugate.it(passedVerb))
+                        .map((conjugation, index) => ({...conjugation, positive: cardStates[index], at: index}));
+                                           
   // reorder conjugations based on settings
-  // Sort here would be faster                                              
   conjugations = settings
                     .reduce((a, {tense, visible}) => visible ? [...a, conjugations.find(z => z.tense === tense)] : a, []);
     return (

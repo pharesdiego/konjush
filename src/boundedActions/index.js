@@ -1,12 +1,11 @@
 import { 
   SETTING_ORDER, 
   SETTING_TOGGLE_VISIBILITY, 
-  CARD_VIEW_NEGATIVE, 
-  CARD_VIEW_POSITIVE, 
   RECEIVE_CONJUGATIONS, 
   RECEIVE_URL,
   ADD_RECENT_VERB,
-  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB
+  RECEIVE_CONJUGATIONS_URL_AND_RECENT_VERB,
+  CARD_TOGGLE_VIEW_STATE
  } from './../reducers/actions';
 import Store from './../store';
 
@@ -24,18 +23,11 @@ export const boundSettingToggleVisibility = (tense) => {
     tense
   })
 }
-
-export const boundCardViewPositive = (at) => {
+export const boundCardToggleViewState = ({ at, view }) => {
   Store.dispatch({
-    type: CARD_VIEW_POSITIVE,
-    at 
-  })
-}
-
-export const boundCardViewNegative = (at) => {
-  Store.dispatch({
-    type: CARD_VIEW_NEGATIVE,
-    at 
+    type: CARD_TOGGLE_VIEW_STATE,
+    at,
+    view,
   })
 }
 
