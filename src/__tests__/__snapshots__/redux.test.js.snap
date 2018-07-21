@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`>>> conjugatorReducer <<< action CARD_TOGGLE_VIEW_STATE 1`] = `
+Object {
+  "cardStates": Array [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  "conjugations": false,
+  "recentVerbs": Array [],
+  "url": "/konjush/conjugation",
+}
+`;
+
+exports[`>>> conjugatorReducer <<< action CARD_TOGGLE_VIEW_STATE 2`] = `
+Object {
+  "cardStates": Array [
+    true,
+    true,
+    true,
+    true,
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  "conjugations": false,
+  "recentVerbs": Array [],
+  "url": "/konjush/conjugation",
+}
+`;
+
+exports[`>>> conjugatorReducer <<< action RECEIVE_URL 1`] = `
+Object {
+  "cardStates": Array [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  "conjugations": false,
+  "recentVerbs": Array [],
+  "url": "/konjush/conjugation/yemek",
+}
+`;
+
+exports[`>>> conjugatorReducer <<< action RECEIVE_URL 2`] = `
+Object {
+  "cardStates": Array [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  "conjugations": false,
+  "recentVerbs": Array [],
+  "url": "/konjush/",
+}
+`;
+
+exports[`>>> conjugatorReducer <<< action RECEIVE_URL_AND_RECENT_VERB 1`] = `
+Object {
+  "cardStates": Array [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ],
+  "conjugations": false,
+  "recentVerbs": Array [
+    "olmak",
+  ],
+  "url": "/konjush/conjugation/olmak",
+}
+`;
+
+exports[`>>> settingsReducers <<< action SETTING_ORDER 1`] = `
+Array [
+  Object {
+    "tense": "gerund",
+    "title": "Gerund",
+    "visible": true,
+  },
+  Object {
+    "tense": "aorist",
+    "title": "Aorist",
+    "visible": true,
+  },
+  Object {
+    "tense": "future",
+    "title": "Future",
+    "visible": true,
+  },
+  Object {
+    "tense": "simple-past",
+    "title": "Simple Past",
+    "visible": true,
+  },
+  Object {
+    "tense": "mis-past",
+    "title": "Miş Past",
+    "visible": true,
+  },
+  Object {
+    "tense": "past-continuous",
+    "title": "Past Continuous",
+    "visible": true,
+  },
+  Object {
+    "tense": "present-indefinite",
+    "title": "Present Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "present-continuous-indefinite",
+    "title": "Gerund Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "future-indefinite",
+    "title": "Future Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "potential",
+    "title": "Potential",
+    "visible": true,
+  },
+]
+`;
+
+exports[`>>> settingsReducers <<< action SETTING_TOGGLE_VISIBILITY 1`] = `
+Array [
+  Object {
+    "tense": "aorist",
+    "title": "Aorist",
+    "visible": true,
+  },
+  Object {
+    "tense": "gerund",
+    "title": "Gerund",
+    "visible": true,
+  },
+  Object {
+    "tense": "future",
+    "title": "Future",
+    "visible": true,
+  },
+  Object {
+    "tense": "simple-past",
+    "title": "Simple Past",
+    "visible": false,
+  },
+  Object {
+    "tense": "mis-past",
+    "title": "Miş Past",
+    "visible": true,
+  },
+  Object {
+    "tense": "past-continuous",
+    "title": "Past Continuous",
+    "visible": true,
+  },
+  Object {
+    "tense": "present-indefinite",
+    "title": "Present Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "present-continuous-indefinite",
+    "title": "Gerund Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "future-indefinite",
+    "title": "Future Indefinite",
+    "visible": true,
+  },
+  Object {
+    "tense": "potential",
+    "title": "Potential",
+    "visible": true,
+  },
+]
+`;

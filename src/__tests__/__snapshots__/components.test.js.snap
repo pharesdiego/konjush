@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Section/> must display each section properly <Section/> must display text 1`] = `"<p>About</p>"`;
+
+exports[`<Section/> must display each section properly <Section/> must display text 2`] = `"<p>mission &amp; how to contribute</p>"`;
