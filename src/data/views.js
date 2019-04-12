@@ -40,13 +40,13 @@ export const LearnData = {
       name: 'r/turkishlearning',
       type: 'Visit this Reddit Thread',
       info: '1000+ members, good resources',
-      url: 'https://es.reddit.com/r/turkishlearning/'
+      url: 'https://en.reddit.com/r/turkishlearning/'
     },
     {
       name: 'r/LanguageBuds/',
       type: 'Visit this Reddit Thread',
       info: 'find people to practice',
-      url: 'https://es.reddit.com/r/LanguageBuds/'
+      url: 'https://en.reddit.com/r/LanguageBuds/'
     },
     {
       name: 'Speaky',
